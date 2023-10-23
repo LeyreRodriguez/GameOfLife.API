@@ -1,0 +1,11 @@
+C:\Users\lerodriguez\source\repos\GameOfLifeAPI\GameOfLife.Business\bin\Debug\net7.0\GameOfLife.Business.deps.json
+C:\Users\lerodriguez\source\repos\GameOfLifeAPI\GameOfLife.Business\bin\Debug\net7.0\GameOfLife.Business.dll
+C:\Users\lerodriguez\source\repos\GameOfLifeAPI\GameOfLife.Business\bin\Debug\net7.0\GameOfLife.Business.pdb
+C:\Users\lerodriguez\source\repos\GameOfLifeAPI\GameOfLife.Business\obj\Debug\net7.0\GameOfLife.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lerodriguez\source\repos\GameOfLifeAPI\GameOfLife.Business\obj\Debug\net7.0\GameOfLife.Business.AssemblyInfoInputs.cache
+C:\Users\lerodriguez\source\repos\GameOfLifeAPI\GameOfLife.Business\obj\Debug\net7.0\GameOfLife.Business.AssemblyInfo.cs
+C:\Users\lerodriguez\source\repos\GameOfLifeAPI\GameOfLife.Business\obj\Debug\net7.0\GameOfLife.Business.csproj.CoreCompileInputs.cache
+C:\Users\lerodriguez\source\repos\GameOfLifeAPI\GameOfLife.Business\obj\Debug\net7.0\GameOfLife.Business.dll
+C:\Users\lerodriguez\source\repos\GameOfLifeAPI\GameOfLife.Business\obj\Debug\net7.0\refint\GameOfLife.Business.dll
+C:\Users\lerodriguez\source\repos\GameOfLifeAPI\GameOfLife.Business\obj\Debug\net7.0\GameOfLife.Business.pdb
+C:\Users\lerodriguez\source\repos\GameOfLifeAPI\GameOfLife.Business\obj\Debug\net7.0\ref\GameOfLife.Business.dll

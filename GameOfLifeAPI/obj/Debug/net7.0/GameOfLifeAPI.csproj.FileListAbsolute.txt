@@ -31,4 +31,10 @@ C:\Users\lerodriguez\source\repos\GameOfLifeAPI\GameOfLifeAPI\obj\Debug\net7.0\r
 C:\Users\lerodriguez\source\repos\GameOfLifeAPI\GameOfLifeAPI\obj\Debug\net7.0\GameOfLifeAPI.pdb
 C:\Users\lerodriguez\source\repos\GameOfLifeAPI\GameOfLifeAPI\obj\Debug\net7.0\GameOfLifeAPI.genruntimeconfig.cache
 C:\Users\lerodriguez\source\repos\GameOfLifeAPI\GameOfLifeAPI\obj\Debug\net7.0\ref\GameOfLifeAPI.dll
+C:\Users\lerodriguez\source\repos\GameOfLifeAPI\GameOfLifeAPI\bin\Debug\net7.0\Microsoft.Extensions.PlatformAbstractions.dll
+C:\Users\lerodriguez\source\repos\GameOfLifeAPI\GameOfLifeAPI\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\lerodriguez\source\repos\GameOfLifeAPI\GameOfLifeAPI\bin\Debug\net7.0\GameOfLife.Business.dll
+C:\Users\lerodriguez\source\repos\GameOfLifeAPI\GameOfLifeAPI\bin\Debug\net7.0\GameOfLife.Infrastructure.dll
+C:\Users\lerodriguez\source\repos\GameOfLifeAPI\GameOfLifeAPI\bin\Debug\net7.0\GameOfLife.Business.pdb
+C:\Users\lerodriguez\source\repos\GameOfLifeAPI\GameOfLifeAPI\bin\Debug\net7.0\GameOfLife.Infrastructure.pdb
 C:\Users\lerodriguez\source\repos\GameOfLifeAPI\GameOfLifeAPI\bin\Debug\net7.0\gameoflife.json
