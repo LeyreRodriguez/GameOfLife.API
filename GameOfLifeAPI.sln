@@ -3,13 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfLifeAPI", "GameOfLifeAPI\GameOfLifeAPI.csproj", "{FD626D73-0B45-43EB-82C0-CA4B7690756D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameOfLifeAPI", "GameOfLifeAPI\GameOfLifeAPI.csproj", "{FD626D73-0B45-43EB-82C0-CA4B7690756D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfLifeAPI.Test", "GameOfLifeAPI.Test\GameOfLifeAPI.Test.csproj", "{3E08D765-CF9B-4175-8D11-945056273115}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameOfLife.API.Test", "GameOfLifeAPI.Test\GameOfLife.API.Test.csproj", "{3E08D765-CF9B-4175-8D11-945056273115}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfLife.Business", "GameOfLife.Business\GameOfLife.Business.csproj", "{C993411C-70CC-4853-A6F4-5E076DE2811F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameOfLife.Business", "GameOfLife.Business\GameOfLife.Business.csproj", "{C993411C-70CC-4853-A6F4-5E076DE2811F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfLife.Infrastructure", "GameOfLife.Infrastructure\GameOfLife.Infrastructure.csproj", "{1C084547-5475-4843-B24E-8987D77DDC6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameOfLife.Infrastructure", "GameOfLife.Infrastructure\GameOfLife.Infrastructure.csproj", "{1C084547-5475-4843-B24E-8987D77DDC6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfLife.Business.Test", "GameOfLife.Business.Test\GameOfLife.Business.Test.csproj", "{74189FFE-CC3A-4433-A7C0-97CD8410CEFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardBuilder", "BoardBuilder\BoardBuilder.csproj", "{2A99881D-62C5-4F4E-9F11-360E76C4A3BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfLife.Infrastructure.Test", "GameOfLife.Infrastructure.Test\GameOfLife.Infrastructure.Test.csproj", "{805E760F-F164-462F-97B5-FA1FEDD392C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +39,18 @@ Global
 		{1C084547-5475-4843-B24E-8987D77DDC6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C084547-5475-4843-B24E-8987D77DDC6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C084547-5475-4843-B24E-8987D77DDC6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74189FFE-CC3A-4433-A7C0-97CD8410CEFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74189FFE-CC3A-4433-A7C0-97CD8410CEFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74189FFE-CC3A-4433-A7C0-97CD8410CEFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74189FFE-CC3A-4433-A7C0-97CD8410CEFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A99881D-62C5-4F4E-9F11-360E76C4A3BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A99881D-62C5-4F4E-9F11-360E76C4A3BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A99881D-62C5-4F4E-9F11-360E76C4A3BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A99881D-62C5-4F4E-9F11-360E76C4A3BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{805E760F-F164-462F-97B5-FA1FEDD392C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{805E760F-F164-462F-97B5-FA1FEDD392C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{805E760F-F164-462F-97B5-FA1FEDD392C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{805E760F-F164-462F-97B5-FA1FEDD392C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

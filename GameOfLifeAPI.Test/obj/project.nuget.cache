@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CwBd0r55XaG01Q0CN3LZjTomzYBxfukh3t4X3M+ikHyaKvn/l0ZDdTvgqMKU4bwF7qnZC/5TQ9Zi3yKRlkor0A==",
+  "dgSpecHash": "yGY0OQ/+PyFfGjCJkLmC6B4VW1KTgjG2rrSz824FJ/qpH9me0YU2tIjPGT/hWwLc4nj4v0narXgAJhZ3QnpIyw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLifeAPI.Test\\GameOfLifeAPI.Test.csproj",
+  "projectFilePath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLifeAPI.Test\\GameOfLife.API.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lerodriguez\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\lerodriguez\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",

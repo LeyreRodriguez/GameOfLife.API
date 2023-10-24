@@ -27,19 +27,9 @@
 
 
 
-        private void isDead()
+        public bool isAlive()
         {
-            State = State.Dead;
-        }
-
-        private void Alive()
-        {
-            State = State.Alive;
-        }
-
-        public State GetState()
-        {
-            return State;
+            return this.State == State.Alive;
         }
 
         public void UpdateState(State newState)

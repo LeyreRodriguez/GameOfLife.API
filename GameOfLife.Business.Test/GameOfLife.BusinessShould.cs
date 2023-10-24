@@ -1,7 +1,5 @@
 ﻿using FluentAssertions;
-using GameOfLife.Business;
-using GameOfLife.Infrastructure;
-using GameOfLifeAPI.Test;
+using GameOfLife.API.Test;
 using NSubstitute;
 using System;
 using System.Collections.Generic;
@@ -9,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameOfLife.Business
+namespace GameOfLife.Business.Test
 {
     public class GameOfLifeShould
     {
@@ -35,7 +33,7 @@ namespace GameOfLife.Business
 
             bool[][] expectedBoard = new BoardBuilder(4, 4)
             .SetAliveCell(0, 1)
-            .SetAliveCell(0, 2)
+            .SetAliveCell(0, 0)
             .SetAliveCell(1, 0)
             .SetAliveCell(1, 1)
             .Build();

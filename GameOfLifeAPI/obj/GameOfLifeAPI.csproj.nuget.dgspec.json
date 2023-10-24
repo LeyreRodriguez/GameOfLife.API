@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLifeAPI\\GameOfLifeAPI.csproj": {}
+    "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLifeAPI\\GameOfLifeAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLife.Business\\GameOfLife.Business.csproj": {
+    "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLife.Business\\GameOfLife.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLife.Business\\GameOfLife.Business.csproj",
+        "projectUniqueName": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLife.Business\\GameOfLife.Business.csproj",
         "projectName": "GameOfLife.Business",
-        "projectPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLife.Business\\GameOfLife.Business.csproj",
+        "projectPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLife.Business\\GameOfLife.Business.csproj",
         "packagesPath": "C:\\Users\\lerodriguez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLife.Business\\obj\\",
+        "outputPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLife.Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -42,6 +42,20 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.12.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.69, )"
+            },
+            "NSubstitute": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -62,14 +76,14 @@
         }
       }
     },
-    "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLife.Infrastructure\\GameOfLife.Infrastructure.csproj": {
+    "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLife.Infrastructure\\GameOfLife.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLife.Infrastructure\\GameOfLife.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLife.Infrastructure\\GameOfLife.Infrastructure.csproj",
         "projectName": "GameOfLife.Infrastructure",
-        "projectPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLife.Infrastructure\\GameOfLife.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLife.Infrastructure\\GameOfLife.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\lerodriguez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLife.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLife.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -89,8 +103,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLife.Business\\GameOfLife.Business.csproj": {
-                "projectPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLife.Business\\GameOfLife.Business.csproj"
+              "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLife.Business\\GameOfLife.Business.csproj": {
+                "projectPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLife.Business\\GameOfLife.Business.csproj"
               }
             }
           }
@@ -105,6 +119,18 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.12.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.69, )"
+            },
+            "NSubstitute": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -130,14 +156,14 @@
         }
       }
     },
-    "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLifeAPI\\GameOfLifeAPI.csproj": {
+    "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLifeAPI\\GameOfLifeAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLifeAPI\\GameOfLifeAPI.csproj",
+        "projectUniqueName": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLifeAPI\\GameOfLifeAPI.csproj",
         "projectName": "GameOfLifeAPI",
-        "projectPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLifeAPI\\GameOfLifeAPI.csproj",
+        "projectPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLifeAPI\\GameOfLifeAPI.csproj",
         "packagesPath": "C:\\Users\\lerodriguez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLifeAPI\\obj\\",
+        "outputPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLifeAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -157,11 +183,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLife.Business\\GameOfLife.Business.csproj": {
-                "projectPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLife.Business\\GameOfLife.Business.csproj"
+              "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLife.Business\\GameOfLife.Business.csproj": {
+                "projectPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLife.Business\\GameOfLife.Business.csproj"
               },
-              "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLife.Infrastructure\\GameOfLife.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLife.Infrastructure\\GameOfLife.Infrastructure.csproj"
+              "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLife.Infrastructure\\GameOfLife.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLife.Infrastructure\\GameOfLife.Infrastructure.csproj"
               }
             }
           }
@@ -176,6 +202,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.12.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.12, )"
@@ -183,6 +213,14 @@
             "Microsoft.Extensions.PlatformAbstractions": {
               "target": "Package",
               "version": "[1.1.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.69, )"
+            },
+            "NSubstitute": {
+              "target": "Package",
+              "version": "[5.1.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

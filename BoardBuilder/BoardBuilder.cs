@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameOfLifeAPI.Test
+namespace GameOfLife.API.Test
 {
     public class BoardBuilder
     {

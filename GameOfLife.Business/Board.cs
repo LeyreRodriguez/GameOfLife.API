@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
+﻿
 namespace GameOfLife.Business
 {
     public class Board
@@ -20,21 +18,12 @@ namespace GameOfLife.Business
 
         public bool Equals(Board otherBoard)
         {
-            if (otherBoard == null) { return false; }
-
-            if (cells == null && otherBoard.cells == null) { return true; }
-
-            if (cells == null || otherBoard.cells == null) { return false; }
-
-            // Comparamos las longitudes de las filas y columnas
-            if (cells.Length != otherBoard.cells.Length || cells[0].Length != otherBoard.cells[0].Length) { return false; }
-
-            // Comparamos los elementos de las matrices
-            for (int i = 0; i < cells.Length; i++)
+            for (int i = 0; i < Rows; i++)
             {
-                for (int j = 0; j < cells[0].Length; j++)
+                for (int j = 0; j < Columns; j++)
                 {
-                    if (cells[i][j] != otherBoard.cells[i][j])
+
+                    if (GetCell(i, j).State != otherBoard.GetCell(i, j).State)
                     {
                         return false;
                     }
@@ -162,23 +151,24 @@ namespace GameOfLife.Business
         private int CountLiveNeighbors(int row, int col)
         {
             int liveNeighbors = 0;
-            for (int i = -1; i <= 1; i++)
+            int[] dr = { -1, -1, -1, 0, 0, 1, 1, 1 };
+            int[] dc = { -1, 0, 1, -1, 1, -1, 0, 1 };
+
+            for (int i = 0; i < 8; i++)
             {
-                for (int j = -1; j <= 1; j++)
+                int neighborRow = row + dr[i];
+                int neighborCol = col + dc[i];
+
+                if (neighborRow >= 0 && neighborRow < Rows && neighborCol >= 0 && neighborCol < Columns)
                 {
-                    int neighborRow = row + i;
-                    int neighborCol = col + j;
-                    if (i == 0 && j == 0) continue;
-                    if (neighborRow >= 0 && neighborRow < Rows && neighborCol >= 0 && neighborCol < Columns)
+                    if (GetCell(neighborRow, neighborCol).isAlive())
                     {
-                        if (GetCell(neighborRow, neighborCol).State == State.Alive)
-                        {
-                            liveNeighbors++;
-                        }
+                        liveNeighbors++;
                     }
                 }
             }
             return liveNeighbors;
+
         }
     }
 }

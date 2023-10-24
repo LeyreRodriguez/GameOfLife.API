@@ -3,9 +3,8 @@ using Moq;
 using GameOfLife.Business;
 using GameOfLife.Infrastructure;
 using Newtonsoft.Json;
-using Microsoft.AspNetCore.Mvc;
 using FluentAssertions;
-using GameOfLifeAPI.Test;
+using GameOfLife.API.Test;
 
 namespace GameOfLife.Tests
 

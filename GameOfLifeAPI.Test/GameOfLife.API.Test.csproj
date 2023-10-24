@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BoardBuilder\BoardBuilder.csproj" />
     <ProjectReference Include="..\GameOfLifeAPI\GameOfLifeAPI.csproj" />
   </ItemGroup>
 

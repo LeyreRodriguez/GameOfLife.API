@@ -725,9 +725,29 @@
           }
         }
       },
+      "BoardBuilder/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "FluentAssertions": "6.12.0",
+          "Moq": "4.20.69",
+          "NSubstitute": "5.1.0"
+        },
+        "compile": {
+          "bin/placeholder/BoardBuilder.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BoardBuilder.dll": {}
+        }
+      },
       "GameOfLife.Business/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "FluentAssertions": "6.12.0",
+          "Moq": "4.20.69",
+          "NSubstitute": "5.1.0"
+        },
         "compile": {
           "bin/placeholder/GameOfLife.Business.dll": {}
         },
@@ -739,7 +759,10 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "FluentAssertions": "6.12.0",
           "GameOfLife.Business": "1.0.0",
+          "Moq": "4.20.69",
+          "NSubstitute": "5.1.0",
           "Newtonsoft.Json": "13.0.3"
         },
         "compile": {
@@ -753,10 +776,13 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "FluentAssertions": "6.12.0",
           "GameOfLife.Business": "1.0.0",
           "GameOfLife.Infrastructure": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "7.0.12",
           "Microsoft.Extensions.PlatformAbstractions": "1.1.0",
+          "Moq": "4.20.69",
+          "NSubstitute": "5.1.0",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "compile": {
@@ -2431,6 +2457,11 @@
         "system.threading.tasks.nuspec"
       ]
     },
+    "BoardBuilder/1.0.0": {
+      "type": "project",
+      "path": "../BoardBuilder/BoardBuilder.csproj",
+      "msbuildProject": "../BoardBuilder/BoardBuilder.csproj"
+    },
     "GameOfLife.Business/1.0.0": {
       "type": "project",
       "path": "../GameOfLife.Business/GameOfLife.Business.csproj",
@@ -2449,6 +2480,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "BoardBuilder >= 1.0.0",
       "FluentAssertions >= 6.12.0",
       "GameOfLifeAPI >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.7.1",
@@ -2467,11 +2499,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLifeAPI.Test\\GameOfLifeAPI.Test.csproj",
-      "projectName": "GameOfLifeAPI.Test",
-      "projectPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLifeAPI.Test\\GameOfLifeAPI.Test.csproj",
+      "projectUniqueName": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLifeAPI.Test\\GameOfLife.API.Test.csproj",
+      "projectName": "GameOfLife.API.Test",
+      "projectPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLifeAPI.Test\\GameOfLife.API.Test.csproj",
       "packagesPath": "C:\\Users\\lerodriguez\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLifeAPI.Test\\obj\\",
+      "outputPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLifeAPI.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2491,8 +2523,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLifeAPI\\GameOfLifeAPI.csproj": {
-              "projectPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLifeAPI\\GameOfLifeAPI\\GameOfLifeAPI.csproj"
+            "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\BoardBuilder\\BoardBuilder.csproj": {
+              "projectPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\BoardBuilder\\BoardBuilder.csproj"
+            },
+            "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLifeAPI\\GameOfLifeAPI.csproj": {
+              "projectPath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLifeAPI\\GameOfLifeAPI.csproj"
             }
           }
         }

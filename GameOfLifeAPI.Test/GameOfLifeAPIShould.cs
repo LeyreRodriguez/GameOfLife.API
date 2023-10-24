@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GameOfLife.Business;
 using GameOfLife.Infrastructure;
 using System.IO;
-using GameOfLifeAPI.Test;
+using GameOfLife.API.Test;
 
 namespace GameOfLife.Business
 
