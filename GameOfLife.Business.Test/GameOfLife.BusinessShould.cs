@@ -13,12 +13,14 @@ namespace GameOfLife.Business.Test
     {
         private BoardRepository boardRepository;
         private GameOfLife game;
+        private string gameId;
 
         [SetUp]
         public void SetUp()
         {
             boardRepository = Substitute.For<BoardRepository>();
             game = new GameOfLife(boardRepository);
+            gameId = "abc123.json";
 
         }
         [Test]
@@ -38,12 +40,12 @@ namespace GameOfLife.Business.Test
             .SetAliveCell(1, 1)
             .Build();
 
-            game.NewGame(initialBoard);
-            boardRepository.Load().Returns(new Board(initialBoard));
-            game.nextGen();
+            game.NewGame(initialBoard,gameId);
+            boardRepository.Load(gameId).Returns(new Board(initialBoard));
+            game.nextGen(gameId);
 
             GameOfLife expected = new GameOfLife(boardRepository);
-            expected.NewGame(expectedBoard);
+            expected.NewGame(expectedBoard, gameId);
 
             game.Equals(expected).Should().BeTrue();
 
@@ -64,12 +66,12 @@ namespace GameOfLife.Business.Test
             bool[][] expectedBoard = new BoardBuilder(4, 4)
             .Build();
 
-            game.NewGame(initialBoard);
-            boardRepository.Load().Returns(new Board(initialBoard));
-            game.nextGen();
+            game.NewGame(initialBoard, gameId);
+            boardRepository.Load(gameId).Returns(new Board(initialBoard));
+            game.nextGen(gameId);
 
             GameOfLife expected = new GameOfLife(boardRepository);
-            expected.NewGame(expectedBoard);
+            expected.NewGame(expectedBoard, gameId);
 
             game.Equals(expected).Should().BeTrue();
 
@@ -104,12 +106,12 @@ namespace GameOfLife.Business.Test
 
 
 
-            game.NewGame(initialBoard);
-            boardRepository.Load().Returns(new Board(initialBoard));
-            game.nextGen();
+            game.NewGame(initialBoard, gameId);
+            boardRepository.Load(gameId).Returns(new Board(initialBoard));
+            game.nextGen(gameId);
 
             GameOfLife expected = new GameOfLife(boardRepository);
-            expected.NewGame(expectedBoard);
+            expected.NewGame(expectedBoard, gameId);
 
             game.Equals(expected).Should().BeTrue();
         }

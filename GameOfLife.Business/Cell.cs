@@ -6,7 +6,7 @@
         Alive
     }
 
-    internal class Cell
+    public class Cell
     {
 
 

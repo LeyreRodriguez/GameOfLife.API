@@ -11,8 +11,8 @@ namespace GameOfLife.Business
     [ApiController]
     public class GameOfLifeController : ControllerBase
     {
-        public const string SavePath = "gameoflife.json";
         private GameOfLife game;
+        private string generateId;
 
         public GameOfLifeController(GameOfLife game)
         {
@@ -25,16 +25,24 @@ namespace GameOfLife.Business
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult CreateGame([FromBody] bool[][] initialBoard)
         {
-            game.NewGame(initialBoard);
-            return Ok("Game created and saved.");
+            generateId = Guid.NewGuid().ToString();
+            game.NewGame(initialBoard,generateId);
+            var response = new
+            {
+                Message = "Game created and saved.",
+                GameId = generateId
+            };
+
+            return Ok(response);
         }
 
 
-        [HttpPut]
+        [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult CalculateNextGeneration()
+        public IActionResult CalculateNextGeneration(string id)
         {
-            game.nextGen();
+            string fileName = $"game_{id}.json";
+            game.nextGen(id);
             return Ok("Game update with new generation.");
         }
 

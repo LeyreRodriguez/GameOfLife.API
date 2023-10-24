@@ -92,3 +92,4 @@ C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLifeAPI\obj\Debug\net7.0\
 C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLifeAPI\obj\Debug\net7.0\GameOfLifeAPI.pdb
 C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLifeAPI\obj\Debug\net7.0\GameOfLifeAPI.genruntimeconfig.cache
 C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLifeAPI\obj\Debug\net7.0\ref\GameOfLifeAPI.dll
+C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLifeAPI\bin\Debug\net7.0\.json

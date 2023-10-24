@@ -7,28 +7,30 @@ namespace GameOfLife.Infrastructure
     {
         private string path;
 
+
         public FileSystemBoardRepository(string path)
         {
             this.path = path;
         }
 
-        public Board Load()
+        public Board Load(string id)
         {
-            string json = File.ReadAllText(path);
+            string json = File.ReadAllText($"{id}.json");
             BoardData boardData = JsonConvert.DeserializeObject<BoardData>(json);
 
             return boardData.toBoard();
         }
 
-        public void Save(Board board)
+        public void Save(Board board, string id)
         {
-
+            string fileName = $"{id}.json";
             BoardData boardData = board.toDTO();
             string json = JsonConvert.SerializeObject(boardData);
 
-            File.WriteAllText(path, json);
+            File.WriteAllText(fileName, json);
 
         }
+
 
     }
 

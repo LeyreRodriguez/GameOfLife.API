@@ -4,9 +4,8 @@ namespace GameOfLife.Business
     public class Board
     {
         private List<Cell> board;
-        private int Rows { get; }
-        private int Columns { get; }
-        private bool[][] cells;
+        public int Rows { get; }
+        public int Columns { get; }
         public Board(bool[][] InitialBoard)
         {
             Rows = InitialBoard.Length;
@@ -91,7 +90,7 @@ namespace GameOfLife.Business
             }
         }
 
-        private Cell GetCell(int row, int col)
+        public Cell GetCell(int row, int col)
         {
             if (row >= 0 && row < Rows && col >= 0 && col < Columns)
             {

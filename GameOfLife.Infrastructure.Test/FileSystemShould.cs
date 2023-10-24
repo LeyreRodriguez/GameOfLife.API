@@ -13,11 +13,13 @@ namespace GameOfLife.Tests
     [TestFixture]
     public class FileSystemShould
     {
-        public string path;
+        private string gameId;
+        private string path;
         [SetUp]
         public void SetUp()
         {
-            path = "gameoflife.json";
+            gameId = "abc123";
+            path = $"{gameId}.json";
         }
         [Test]
         public void Load_ValidPath_ReturnsBoard()
@@ -33,7 +35,7 @@ namespace GameOfLife.Tests
             .Build();
 
             Board board = new Board(initialBoard);
-            fileSystemBoardRepository.Save(board);
+            fileSystemBoardRepository.Save(board,gameId);
 
             string file = File.ReadAllText(path);
 
@@ -56,9 +58,9 @@ namespace GameOfLife.Tests
             .Build();
 
             Board board = new Board(initialBoard);
-            fileSystemBoardRepository.Save(board);
+            fileSystemBoardRepository.Save(board, gameId);
 
-            Board boardLoaded = fileSystemBoardRepository.Load();
+            Board boardLoaded = fileSystemBoardRepository.Load(gameId);
             Assert.IsTrue(board.Equals(boardLoaded));
         }
 

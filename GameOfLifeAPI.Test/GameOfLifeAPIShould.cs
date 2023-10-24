@@ -26,7 +26,7 @@ namespace GameOfLife.Business
             FileSystemBoardRepository fileSystemBoardRepository = new FileSystemBoardRepository("gameoflife.json");
             game = new GameOfLife(fileSystemBoardRepository);
             gameController = new GameOfLifeController(game);
-            
+
         }
 
         [Test]
@@ -51,8 +51,9 @@ namespace GameOfLife.Business
         [Test]
         public void CalculateNextGeneration_ValidInput_ReturnsOk()
         {
+            string gameId = "abc123";
             // Act
-            IActionResult result = gameController.CalculateNextGeneration();
+            IActionResult result = gameController.CalculateNextGeneration(gameId);
 
             // Assert
             Assert.IsInstanceOf<OkObjectResult>(result);
@@ -60,6 +61,8 @@ namespace GameOfLife.Business
             Assert.AreEqual(200, okResult.StatusCode);
             Assert.AreEqual("Game update with new generation.", okResult.Value);
         }
+
+
 
     }
 

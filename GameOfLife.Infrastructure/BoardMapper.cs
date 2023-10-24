@@ -12,18 +12,16 @@ namespace GameOfLife.Infrastructure
         public static BoardData toDTO(this Board board)
         {
             var cells = new List<CellData>();
-            var array = board.ToArray();
-            for (int i = 0; i < array[0].Length; i++)
+            for (int i = 0; i < board.Rows; i++) // Use GetLength(0) for the number of rows.
             {
-                for (int j = 0; j < array[1].Length; j++)
+                for (int j = 0; j < board.Columns; j++) // Use GetLength(1) for the number of columns.
                 {
-                    cells.Add(new CellData() { State = array[i][j], x = i, y = j });
+                    cells.Add(new CellData() { State = board.GetCell(i, j).isAlive(), x = i, y = j });
                 }
             }
             return new BoardData() { Cells = cells };
-
-
         }
+
 
         public static Board toBoard(this BoardData boardData)
         {

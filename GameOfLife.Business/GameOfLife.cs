@@ -6,17 +6,18 @@ namespace GameOfLife.Business
 
         private Board board;
         private readonly BoardRepository boardRepository;
+        
 
         public GameOfLife(BoardRepository boardRepository)
         {
             this.boardRepository = boardRepository;
         }
 
-        public void nextGen()
+        public void nextGen(string gameId)
         {
-            this.board = boardRepository.Load();
+            this.board = boardRepository.Load(gameId);
             board.CalculateNextGeneration();
-            boardRepository.Save(board);
+            boardRepository.Save(board,gameId);
         }
 
         public bool Equals(GameOfLife gameOfLife)
@@ -35,10 +36,10 @@ namespace GameOfLife.Business
             return board.ToArray();
         }
 
-        public void NewGame(bool[][] values)
+        public void NewGame(bool[][] values, string gameId)
         {
             board = new Board(values);
-            boardRepository.Save(board);
+            boardRepository.Save(board, gameId);
         }
 
 

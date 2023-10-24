@@ -1,4 +1,5 @@
 using System.Reflection;
+using FluentAssertions.Common;
 using GameOfLife.Business;
 using GameOfLife.Infrastructure;
 using Microsoft.Extensions.PlatformAbstractions;
@@ -13,8 +14,13 @@ namespace GameOfLife.Business.API
 
             // Add services to the container.
             builder.Services.AddControllers();
-            builder.Services.AddSingleton<GameOfLife>(x =>
-                new GameOfLife(new FileSystemBoardRepository(@"gameoflife.json")));
+            // Dentro del método ConfigureServices en Startup.cs
+            builder.Services.AddScoped<GameOfLife>(provider =>
+            {
+                var boardRepository = new FileSystemBoardRepository(@"gameoflife.json");
+                return new GameOfLife(boardRepository);
+            });
+
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(c =>
             {
