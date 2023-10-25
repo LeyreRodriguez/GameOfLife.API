@@ -17,7 +17,7 @@ namespace GameOfLife.Business.API
             // Dentro del método ConfigureServices en Startup.cs
             builder.Services.AddScoped<GameOfLife>(provider =>
             {
-                var boardRepository = new FileSystemBoardRepository(@"gameoflife.json");
+                var boardRepository = new FileSystemBoardRepository(@"\GameOfLife.API");
                 return new GameOfLife(boardRepository);
             });
 
@@ -41,7 +41,7 @@ namespace GameOfLife.Business.API
             });
 
             var app = builder.Build();
-
+            
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
@@ -51,6 +51,7 @@ namespace GameOfLife.Business.API
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", "GameOfLife API v1");
                 });
             }
+            
 
             app.UseHttpsRedirection();
 

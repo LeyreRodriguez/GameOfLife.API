@@ -22,7 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BoardBuilder\BoardBuilder.csproj" />
-    <ProjectReference Include="..\GameOfLifeAPI\GameOfLifeAPI.csproj" />
+    <ProjectReference Include="..\GameOfLifeAPI\GameOfLife.API.csproj" />
   </ItemGroup>
 
 </Project>
