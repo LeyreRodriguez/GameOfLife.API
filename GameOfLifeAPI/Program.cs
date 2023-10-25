@@ -1,7 +1,12 @@
 using System.Reflection;
+using System.Text.Json;
+using System.Text;
 using FluentAssertions.Common;
+using GameOfLife.API.Controllers;
 using GameOfLife.Business;
 using GameOfLife.Infrastructure;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.PlatformAbstractions;
 
 namespace GameOfLife.Business.API
@@ -68,6 +73,14 @@ namespace GameOfLife.Business.API
                 options.ReportApiVersions = true;
             });
 
+            builder.Services.AddHealthChecks()
+            .AddTypeActivatedCheck<SampleHealthCheckWithArgs>(
+                "Sample",
+                failureStatus: HealthStatus.Degraded,
+                tags: new[] { "sample" },
+                args: new object[] { 1, "Arg" });
+
+
             var app = builder.Build();
             
             // Configure the HTTP request pipeline.
@@ -80,7 +93,12 @@ namespace GameOfLife.Business.API
                     c.SwaggerEndpoint("/swagger/v2/swagger.json", "GameOfLife API v2");
                 });
             }
-            
+
+
+            app.MapHealthChecks("/health", new HealthCheckOptions
+            {
+                ResponseWriter = WriteResponse
+            });
 
             app.UseHttpsRedirection();
 
@@ -90,6 +108,48 @@ namespace GameOfLife.Business.API
             app.MapControllers();
 
             app.Run();
+        }
+
+        private static Task WriteResponse(HttpContext context, HealthReport healthReport)
+        {
+            context.Response.ContentType = "application/json; charset=utf-8";
+
+            var options = new JsonWriterOptions { Indented = true };
+
+            using var memoryStream = new MemoryStream();
+            using (var jsonWriter = new Utf8JsonWriter(memoryStream, options))
+            {
+                jsonWriter.WriteStartObject();
+                jsonWriter.WriteString("status", healthReport.Status.ToString());
+                jsonWriter.WriteStartObject("results");
+
+                foreach (var healthReportEntry in healthReport.Entries)
+                {
+                    jsonWriter.WriteStartObject(healthReportEntry.Key);
+                    jsonWriter.WriteString("status",
+                        healthReportEntry.Value.Status.ToString());
+                    jsonWriter.WriteString("description",
+                        healthReportEntry.Value.Description);
+                    jsonWriter.WriteStartObject("data");
+
+                    foreach (var item in healthReportEntry.Value.Data)
+                    {
+                        jsonWriter.WritePropertyName(item.Key);
+
+                        JsonSerializer.Serialize(jsonWriter, item.Value,
+                            item.Value?.GetType() ?? typeof(object));
+                    }
+
+                    jsonWriter.WriteEndObject();
+                    jsonWriter.WriteEndObject();
+                }
+
+                jsonWriter.WriteEndObject();
+                jsonWriter.WriteEndObject();
+            }
+
+            return context.Response.WriteAsync(
+                Encoding.UTF8.GetString(memoryStream.ToArray()));
         }
     }
 }
