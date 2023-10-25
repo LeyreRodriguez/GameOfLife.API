@@ -6,15 +6,15 @@ using Asp.Versioning;
 
 namespace GameOfLife.Business
 {
-    [ApiVersion("1.0")]
-    [Route("api/v1/gameoflife")]
+    [ApiVersion("2.0")]
+    [Route("api/v2/gameoflife")]
     [ApiController]
-    public class GameOfLifeController : ControllerBase
+    public class GameOfLifeV2Controller : ControllerBase
     {
         private GameOfLife game;
         private string generateId;
 
-        public GameOfLifeController(GameOfLife game)
+        public GameOfLifeV2Controller(GameOfLife game)
         {
             this.game = game;
         }
@@ -33,7 +33,7 @@ namespace GameOfLife.Business
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
 
-        public IActionResult CreateGame([FromBody] bool[][] initialBoard)
+        public IActionResult CreateGame([FromBody] int[][] initialBoard)
         {
             generateId = Guid.NewGuid().ToString();
             game.NewGame(initialBoard, generateId);
@@ -61,6 +61,9 @@ namespace GameOfLife.Business
             return Ok("Game updated with new generation with 2.0 API version");
         }
 
+
+
+     
 
 
     }

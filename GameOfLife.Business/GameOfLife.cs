@@ -25,22 +25,29 @@ namespace GameOfLife.Business
             return gameOfLife.board.Equals(this.board);
         }
 
-        public List<List<bool>> GetBoardState()
-        {
-            
-            return board.GetBoardState();
-        }
-
-        public bool[][] ToArray()
-        {
-            return board.ToArray();
-        }
 
         public void NewGame(bool[][] values, string gameId)
         {
             board = new Board(values);
             boardRepository.Save(board, gameId);
         }
+
+        public void NewGame(int[][] values, string gameId)
+        {
+            // Convierte los valores int a bool
+            bool[][] boolValues = new bool[values.Length][];
+            for (int i = 0; i < values.Length; i++)
+            {
+                boolValues[i] = new bool[values[i].Length];
+                for (int j = 0; j < values[i].Length; j++)
+                {
+                    boolValues[i][j] = values[i][j] != 0; // Convierte 0 a false y otros valores a true
+                }
+            }
+
+            NewGame(boolValues, gameId);
+        }
+
 
 
     }

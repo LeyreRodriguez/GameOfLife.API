@@ -1,5 +1,4 @@
-﻿using GameOfLife.Business;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +19,7 @@ namespace GameOfLife.Business
     {
 
         private GameOfLifeController gameController;
+        private GameOfLifeV2Controller gameControllerv2;
         private GameOfLife game;
 
         [SetUp]
@@ -28,11 +28,12 @@ namespace GameOfLife.Business
             FileSystemBoardRepository fileSystemBoardRepository = new FileSystemBoardRepository(@"\GameOfLife.API");
             game = new GameOfLife(fileSystemBoardRepository);
             gameController = new GameOfLifeController(game);
+            gameControllerv2 = new GameOfLifeV2Controller(game);
 
         }
 
         [Test]
-        public void CreateGame_ValidInput_ReturnsOk()
+        public void CreateGame_ValidInput_ReturnsOk_v1()
         {
             bool[][] initialBoard = new BoardBuilder(4, 4)
             .SetAliveCell(0, 1)
@@ -47,11 +48,10 @@ namespace GameOfLife.Business
             Assert.IsInstanceOf<OkObjectResult>(result);
             var okResult = result as OkObjectResult;
             Assert.AreEqual(200, okResult.StatusCode);
-           // Assert.AreEqual(okResult.Value);
         }
 
         [Test]
-        public void CalculateNextGeneration_ValidInput_ReturnsOk()
+        public void CalculateNextGeneration_ValidInput_ReturnsOk_v1()
         {
             string gameId = "47961b68-cfa6-41bc-ac58-d6d93bda5dd9";
             // Act
@@ -61,9 +61,40 @@ namespace GameOfLife.Business
             Assert.IsInstanceOf<OkObjectResult>(result);
             var okResult = result as OkObjectResult;
             Assert.AreEqual(200, okResult.StatusCode);
-           // Assert.AreEqual("Game updated with new generation.", okResult.Value);
         }
 
+        [Test]
+        public void CreateGame_ValidInput_ReturnsOk_v2()
+        {
+            int[][] initialBoard = new int[][]
+            {
+                new int[] {0,1,0,0},
+                new int[] {1,1,0,0},
+                new int[] {0,0,0,0},
+                new int[] {0,0,0,0}
+            };
+
+            // Act
+            IActionResult result = gameControllerv2.CreateGame(initialBoard);
+
+            // Assert
+            Assert.IsInstanceOf<OkObjectResult>(result);
+            var okResult = result as OkObjectResult;
+            Assert.AreEqual(200, okResult.StatusCode);
+        }
+
+        [Test]
+        public void CalculateNextGeneration_ValidInput_ReturnsOk_v2()
+        {
+            string gameId = "47961b68-cfa6-41bc-ac58-d6d93bda5dd9";
+            // Act
+            IActionResult result = gameControllerv2.CalculateNextGeneration(gameId);
+
+            // Assert
+            Assert.IsInstanceOf<OkObjectResult>(result);
+            var okResult = result as OkObjectResult;
+            Assert.AreEqual(200, okResult.StatusCode);
+        }
 
 
     }

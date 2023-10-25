@@ -26,9 +26,29 @@ namespace GameOfLife.Business.API
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
                 {
-                    Title = "Game Of Life",
+                    Title = "Game Of Life API v1",
                     Version = "v1",
-                    Description = "A game of life API",
+                    Description = "A 1.0 game version of game of life API",
+                });
+
+                c.SwaggerDoc("v2", new Microsoft.OpenApi.Models.OpenApiInfo
+                {
+                    Title = "Game Of Life API v2",
+                    Version = "v2",
+                    Description = "A 2.0 game version of game of life API",
+                });
+
+                c.DocInclusionPredicate((docName, apiDesc) =>
+                {
+                    if (docName == "v1" && apiDesc.RelativePath.Contains("v1"))
+                    {
+                        return true;
+                    }
+                    if (docName == "v2" && apiDesc.RelativePath.Contains("v2"))
+                    {
+                        return true;
+                    }
+                    return false;
                 });
 
                 var basePath = PlatformServices.Default.Application.ApplicationBasePath;
@@ -40,6 +60,14 @@ namespace GameOfLife.Business.API
 
             });
 
+
+            builder.Services.AddApiVersioning(options =>
+            {
+                options.DefaultApiVersion = new Asp.Versioning.ApiVersion(1, 0);
+                options.AssumeDefaultVersionWhenUnspecified = true;
+                options.ReportApiVersions = true;
+            });
+
             var app = builder.Build();
             
             // Configure the HTTP request pipeline.
@@ -49,6 +77,7 @@ namespace GameOfLife.Business.API
                 app.UseSwaggerUI(c =>
                 {
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", "GameOfLife API v1");
+                    c.SwaggerEndpoint("/swagger/v2/swagger.json", "GameOfLife API v2");
                 });
             }
             

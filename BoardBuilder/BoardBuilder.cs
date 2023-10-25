@@ -9,6 +9,7 @@ namespace GameOfLife.API.Test
     public class BoardBuilder
     {
         private bool[][] board;
+      
 
         public BoardBuilder(int x, int y)
         {
