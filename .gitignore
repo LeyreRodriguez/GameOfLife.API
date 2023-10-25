@@ -1,5 +1,11 @@
-# Ignorar archivos y directorios generados por Visual Studio
+# Ignora los directorios específicos
 .vscode/
 .vs/
 bin/
 obj/
+
+# Ignora todos los subdirectorios que cumplan con las características
+**/.vscode/
+**/.vs/
+**/bin/
+**/obj/
