@@ -22,16 +22,16 @@ namespace GameOfLife.Business
         /// <summary>
         /// Return actual generation of GameOfLife and save in a JSON File.
         /// </summary>
-        /// <param name="initialBoard"></param>
-        /// <returns>A JSON File </returns>
+        /// <response code="201">Returns the newly created game id</response>
+        /// <response code="400">The input values are not valid</response>
+        /// 
 
 
 
         [HttpPost]
         [Consumes("application/json")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-
+        [ProducesResponseType(typeof(int), 201)]
+        [ProducesResponseType(400)]
 
         public IActionResult CreateGame([FromBody] int[][] initialBoard)
         {
@@ -46,14 +46,15 @@ namespace GameOfLife.Business
             return Ok(response);
         }
 
-        // Cambiar el "Example Value" para el código de respuesta 200 OK
-
         /// <summary>
         /// Return next generation of GameOfLife from a JSON File and save it.
         /// </summary>
+        /// <response code="200">The game was found and successfully updated</response>
+        /// <response code="404">The game was not found</response>
         /// 
         [HttpPut("{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))] // Tipo personalizado para el ejemplo
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
         public IActionResult CalculateNextGeneration(string id)
         {
             string fileName = $"game_{id}.json";

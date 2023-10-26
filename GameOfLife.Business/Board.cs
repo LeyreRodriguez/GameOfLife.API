@@ -15,65 +15,12 @@ namespace GameOfLife.Business
 
 
 
-        public bool Equals(Board otherBoard)
+        public override bool Equals(object? obj)
         {
-            for (int i = 0; i < Rows; i++)
-            {
-                for (int j = 0; j < Columns; j++)
-                {
-
-                    if (GetCell(i, j).State != otherBoard.GetCell(i, j).State)
-                    {
-                        return false;
-                    }
-                }
-            }
-
-            return true;
+            Board newBoard = (Board)obj;
+            return this.board.SequenceEqual(newBoard.board);
         }
 
-
-        public List<List<bool>> GetBoardState()
-        {
-            List<List<bool>> boardState = new List<List<bool>>();
-            for (int i = 0; i < Rows; i++)
-            {
-                List<bool> row = new List<bool>();
-                for (int j = 0; j < Columns; j++)
-                {
-                    row.Add(GetCell(i, j).State == State.Alive);
-                }
-                boardState.Add(row);
-            }
-            return boardState;
-        }
-
-        public bool[][] ToArray()
-        {
-            bool[][] values = new bool[Rows][];
-
-            for (int i = 0; i < Rows; i++)
-            {
-                values[i] = new bool[Columns];
-                for (int j = 0; j < Columns; j++)
-                {
-                    values[i][j] = false;
-                }
-            }
-
-            for (int i = 0; i < Rows; i++)
-            {
-                for (int j = 0; j < Columns; j++)
-                {
-                    if (GetCell(i, j).State == State.Alive)
-                    {
-                        values[i][j] = true;
-                    }
-                }
-            }
-
-            return values;
-        }
 
 
         private void InitializeBoard(bool[][] InitialBoard)
@@ -104,46 +51,59 @@ namespace GameOfLife.Business
 
         public void CalculateNextGeneration()
         {
-            var newBoard = new bool[Rows][];
+            // Crear una copia de la lista actual para almacenar los nuevos estados
+            List<Cell> newBoard = new List<Cell>(board);
+
             for (int i = 0; i < Rows; i++)
             {
-                newBoard[i] = new bool[Columns];
                 for (int j = 0; j < Columns; j++)
                 {
-                    int liveNeighbors = CountLiveNeighbors(i, j);
+                    State currentCellState = GetCell(i, j).State;
 
-                    if (GetCell(i, j).State == State.Alive)
+                    if (currentCellState == State.Alive)
                     {
-                        if (liveNeighbors < 2 || liveNeighbors > 3)
-                        {
-                            newBoard[i][j] = false;
-                        }
-                        else
-                        {
-                            newBoard[i][j] = true;
-                        }
+                        Underpopulation(GetCell(i, j), newBoard);
+                        Overpopulation(GetCell(i, j), newBoard);
+
                     }
                     else
                     {
-                        if (liveNeighbors == 3)
-                        {
-                            newBoard[i][j] = true;
-                        }
-                        else
-                        {
-                            newBoard[i][j] = false;
-                        }
+                        Reproduction(GetCell(i, j), newBoard);
                     }
                 }
             }
 
             // Actualizar el estado del tablero con la nueva generación
-            for (int i = 0; i < Rows; i++)
+            board = newBoard;
+        }
+
+        public void Underpopulation(Cell currentCell, List<Cell> newBoard)
+        {
+            int liveNeighbors = CountLiveNeighbors(currentCell.x, currentCell.y);
+
+            if (currentCell.isAlive() && liveNeighbors < 2)
             {
-                for (int j = 0; j < Columns; j++)
-                {
-                    GetCell(i, j).UpdateState(newBoard[i][j] ? State.Alive : State.Dead);
-                }
+                newBoard[currentCell.x * Columns + currentCell.y] = new Cell(State.Dead, currentCell.x, currentCell.y);
+            }
+        }
+
+        public void Overpopulation(Cell currentCell, List<Cell> newBoard)
+        {
+            int liveNeighbors = CountLiveNeighbors(currentCell.x, currentCell.y);
+
+            if (currentCell.isAlive() && liveNeighbors > 3)
+            {
+                newBoard[currentCell.x * Columns + currentCell.y] = new Cell(State.Dead, currentCell.x, currentCell.y);
+            }
+        }
+
+        public void Reproduction(Cell currentCell, List<Cell> newBoard)
+        {
+            int liveNeighbors = CountLiveNeighbors(currentCell.x, currentCell.y);
+
+            if (liveNeighbors == 3)
+            {
+                newBoard[currentCell.x * Columns + currentCell.y] = new Cell(State.Alive, currentCell.x, currentCell.y);
             }
         }
 
