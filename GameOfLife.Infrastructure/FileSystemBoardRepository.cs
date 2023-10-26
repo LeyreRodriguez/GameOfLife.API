@@ -15,7 +15,9 @@ namespace GameOfLife.Infrastructure
 
         public Board Load(string id)
         {
-            string json = File.ReadAllText($"{id}.json");
+
+            string fileName = Path.Combine("JSON", $"{id}.json");
+            string json = File.ReadAllText(fileName);
             BoardData boardData = JsonConvert.DeserializeObject<BoardData>(json);
 
             return boardData.toBoard();
@@ -23,7 +25,10 @@ namespace GameOfLife.Infrastructure
 
         public void Save(Board board, string id)
         {
-            string fileName = $"{id}.json";
+            string fileName = Path.Combine("JSON", $"{id}.json");
+
+
+           // string fileName = $"{id}.json";
             BoardData boardData = board.toDTO();
             string json = JsonConvert.SerializeObject(boardData);
 
