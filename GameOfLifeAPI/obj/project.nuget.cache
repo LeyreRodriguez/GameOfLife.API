@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WY3QIwQmBnMGU8E53rDe4PLrxsFKF9FMINuLzkGm0PW6J3Zn0NPWlh5AWZZipOEPOcoxKNpicVfdpOzzQGOcCA==",
+  "dgSpecHash": "S6L7kGBkgha7XrqfJ53Ta4zKnGKcjDS/G7sn1F0v30YzgQYvZ4tl+Xej/3xmvo54KbXoUHS7GwNW8rYUcLLZSg==",
   "success": true,
   "projectFilePath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\GameOfLifeAPI\\GameOfLife.API.csproj",
   "expectedPackageFiles": [
@@ -19,6 +19,7 @@
     "C:\\Users\\lerodriguez\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\lerodriguez\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\lerodriguez\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\lerodriguez\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.4\\microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512",
     "C:\\Users\\lerodriguez\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\lerodriguez\\.nuget\\packages\\moq\\4.20.69\\moq.4.20.69.nupkg.sha512",
     "C:\\Users\\lerodriguez\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",

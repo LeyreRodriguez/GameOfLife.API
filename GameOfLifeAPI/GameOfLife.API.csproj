@@ -8,6 +8,8 @@
 
 	<PropertyGroup>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<UserSecretsId>390fd973-5be7-4479-8a87-cde84170c58d</UserSecretsId>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
 	</PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +17,7 @@
     <PackageReference Include="FluentAssertions" Version="6.12.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.12" />
     <PackageReference Include="Microsoft.Extensions.PlatformAbstractions" Version="1.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
     <PackageReference Include="Moq" Version="4.20.69" />
     <PackageReference Include="NSubstitute" Version="5.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
@@ -22,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BoardBuilder\BoardBuilder.csproj" />
     <ProjectReference Include="..\GameOfLife.Business\GameOfLife.Business.csproj" />
     <ProjectReference Include="..\GameOfLife.Infrastructure\GameOfLife.Infrastructure.csproj" />
   </ItemGroup>

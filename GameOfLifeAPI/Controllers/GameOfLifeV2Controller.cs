@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Swashbuckle.AspNetCore.Filters;
 using System;
 using Asp.Versioning;
+using GameOfLife.API.Test;
 
 namespace GameOfLife.Business
 {
@@ -25,6 +26,30 @@ namespace GameOfLife.Business
         /// <response code="201">Returns the newly created game id</response>
         /// <response code="400">The input values are not valid</response>
         /// 
+        /// <remarks>
+        /// 
+        /// Sample request:
+        ///
+        /// POST /api/v2/gameoflife
+        /// 
+        /// Content-Type: application/json
+        /// 
+        /// Request Body:
+        /// 
+        /// [
+        /// 
+        ///     [3,3],          // Board dimensions
+        ///     
+        ///     [0,1],          // Living cell
+        ///     
+        ///     [1,0],          // Living cell
+        ///     
+        ///     [1,1]
+        ///     
+        /// ]
+        ///     
+        ///
+        /// </remarks>
 
 
 
@@ -36,7 +61,22 @@ namespace GameOfLife.Business
         public IActionResult CreateGame([FromBody] int[][] initialBoard)
         {
             generateId = Guid.NewGuid().ToString();
-            game.NewGame(initialBoard, generateId);
+
+            if (initialBoard[0].Length != 2) { return BadRequest(); }
+
+
+            BoardBuilder board = new BoardBuilder(initialBoard[0][0], initialBoard[0][1]);
+
+            for(int i = 1; i<initialBoard.Length; i++)
+            {
+                board.SetAliveCell(initialBoard[i][0], initialBoard[i][1]);
+            }
+
+
+
+            bool[][] bools = board.Build();
+
+            game.NewGame(bools, generateId);
             var response = new
             {
                 Message = "Game created and saved with 2.0 API version",

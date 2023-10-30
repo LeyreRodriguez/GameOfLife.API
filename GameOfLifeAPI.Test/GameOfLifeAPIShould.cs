@@ -6,9 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using GameOfLife.Infrastructure;
 using System.IO;
-using GameOfLife.API.Test;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
+using GameOfLife.API.Controllers;
+using GameOfLife.API.Test;
 
 namespace GameOfLife.Business
 
@@ -66,16 +67,14 @@ namespace GameOfLife.Business
         [Test]
         public void CreateGame_ValidInput_ReturnsOk_v2()
         {
-            int[][] initialBoard = new int[][]
-            {
-                new int[] {0,1,0,0},
-                new int[] {1,1,0,0},
-                new int[] {0,0,0,0},
-                new int[] {0,0,0,0}
-            };
+            int[][] initialBoard = new int[][]{
+                new int[] { 3, 3 },
+                new int[] { 3, 3 },
+                new int[] { 3, 3 },
+                new int[] { 3, 3 }};
 
             // Act
-            IActionResult result = gameControllerv2.CreateGame(initialBoard);
+            IActionResult result = gameControllerv2.CreateGame( initialBoard);
 
             // Assert
             Assert.IsInstanceOf<OkObjectResult>(result);

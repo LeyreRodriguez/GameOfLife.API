@@ -77,12 +77,10 @@ namespace GameOfLife.Business.API
             string storagePath = @"\GameOfLife.API"; // Reemplaza con la ruta real
 
             builder.Services.AddHealthChecks()
-                .AddCheck<GamePersistenceHealthCheck>("game_persistence", 
-                tags: new[] { "persistence" }, 
-                failureStatus: HealthStatus.Unhealthy)
-                .AddCheck("custom_health_check",
-                () => HealthCheckResult.Healthy("Custom health check is healthy"), 
-                tags: new[] { "custom" });
+                .AddCheck<GamePersistenceHealthCheck>("game_persistence",
+                tags: new[] { "persistence" },
+                failureStatus: HealthStatus.Unhealthy);
+
 
 
             var app = builder.Build();

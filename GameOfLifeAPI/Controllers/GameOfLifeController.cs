@@ -24,7 +24,28 @@ namespace GameOfLife.Business
         /// </summary>
         /// <response code="201">Returns the newly created game id</response>
         /// <response code="400">The input values are not valid</response>
+        /// <remarks>
         /// 
+        /// Sample request:
+        ///
+        /// POST /api/v1/gameoflife
+        /// 
+        /// Content-Type: application/json
+        /// 
+        /// Request Body:
+        /// 
+        /// [
+        /// 
+        ///     [false, true, false],
+        ///     
+        ///     [true, true, false],
+        ///     
+        ///     [false, false, false]
+        ///     
+        /// ]
+        ///     
+        ///
+        /// </remarks>
 
 
 
