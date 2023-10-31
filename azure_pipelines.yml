@@ -1,53 +1,29 @@
+# Docker
+# Build a Docker image
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
 trigger:
-- main  # Cambia 'main' por el nombre de la rama de GitHub que deseas desencadenar
+- main
 
-pr:
-- '*'
+resources:
+- repo: self
 
-pool:
-  vmImage: 'windows-latest'
+variables:
+  tag: '$(Build.BuildId)'
 
-jobs:
-- job: Build
-  steps:
-  - task: UseDotNet@2
-    inputs:
-      packageType: 'sdk'
-      installationPath: $(Agent.ToolsDirectory)/dotnet
-      installationVersion: '7.0'
-
-  - script: dotnet build --configuration Release
-    displayName: 'GameOfLife API'
-
-- job: Test
-  dependsOn: Build
-  steps:
-  - script: dotnet test
-    displayName: 'Run GameOfLife Tests'
-
-- job: Publish
-  dependsOn: Test
-  steps:
-  - script: dotnet publish --configuration Release --output $(build.artifactstagingdirectory)
-    displayName: 'Publish GameOfLife API'
-
-  - task: PublishBuildArtifacts@1
-    inputs:
-      pathtoPublish: $(build.artifactstagingdirectory)
-      artifactName: 'gameoflife'
-
-- job: Deploy
-  dependsOn: Publish
-  condition: succeeded()
-  steps:
-  - task: DownloadBuildArtifacts@0
-    inputs:
-      artifactName: 'gameoflife'
-      downloadPath: $(Build.SourcesDirectory)/artifacts
-
-  - script: |
-      # Aquí puedes agregar los comandos para el despliegue de tu API, como copiar los archivos publicados a tu servidor, configurar variables de entorno, etc.
-      # Por ejemplo:
-      # cp -r $(Build.SourcesDirectory)/artifacts $(Build.ArtifactStagingDirectory)
-    displayName: 'Deploy GameOfLife API'
-
+stages:
+- stage: Build
+  displayName: Build image
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: Docker@2
+      displayName: Build an image
+      inputs:
+        command: build
+        dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
+        tags: |
+          $(tag)
