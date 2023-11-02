@@ -20,9 +20,9 @@ RUN dotnet build "GameOfLife.API.csproj" -c Release -o /app/build
 
 
 WORKDIR /src
-COPY ["../GameOfLife.Test/GameOfLife.API.Test.csproj", "GameOfLifeAPI.Test/"]
-COPY ["../GameOfLife.Business.Test/GameOfLife.Business.Test.csproj", "GameOfLife.Business.Test/"]
-COPY ["../GameOfLife.Infrastructure.Test/GameOfLife.Infrastructure.Test.csproj", "GameOfLife.Infrastructure.Test/"]
+COPY ["./GameOfLifeAPI.Test/GameOfLife.API.Test.csproj", "GameOfLifeAPI.Test/"]
+COPY ["./GameOfLife.Business.Test/GameOfLife.Business.Test.csproj", "GameOfLife.Business.Test/"]
+COPY ["./GameOfLife.Infrastructure.Test/GameOfLife.Infrastructure.Test.csproj", "GameOfLife.Infrastructure.Test/"]
 RUN dotnet restore "./GameOfLifeAPI.Test/GameOfLife.API.Test.csproj"
 RUN dotnet restore "./GameOfLife.Business.Test/GameOfLife.Business.Test.csproj"
 RUN dotnet restore "./GameOfLife.Infrastructure.Test/GameOfLife.Infrastructure.Test.csproj"
