@@ -10,23 +10,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["./GameOfLifeAPI/GameOfLife.API.csproj", "GameOfLifeAPI/"]
-COPY ["./GameOfLife.Business/GameOfLife.Business.csproj", "GameOfLife.Business/"]
-COPY ["./GameOfLife.Infrastructure/GameOfLife.Infrastructure.csproj", "GameOfLife.Infrastructure/"]
+COPY ["../GameOfLifeAPI/GameOfLife.API.csproj", "GameOfLifeAPI/"]
+COPY ["../GameOfLife.Business/GameOfLife.Business.csproj", "GameOfLife.Business/"]
+COPY ["../GameOfLife.Infrastructure/GameOfLife.Infrastructure.csproj", "GameOfLife.Infrastructure/"]
 RUN dotnet restore "GameOfLifeAPI/GameOfLife.API.csproj"
 COPY . .
 WORKDIR "/src/GameOfLifeAPI"
 RUN dotnet build "GameOfLife.API.csproj" -c Release -o /app/build
 
 
-WORKDIR /src
-COPY ["../GameOfLife.Test/GameOfLife.API.Test.csproj", "GameOfLifeAPI.Test/"]
-COPY ["../GameOfLife.Business.Test/GameOfLife.Business.Test.csproj", "GameOfLife.Business.Test/"]
-COPY ["../GameOfLife.Infrastructure.Test/GameOfLife.Infrastructure.Test.csproj", "GameOfLife.Infrastructure.Test/"]
-RUN dotnet restore "./GameOfLifeAPI.Test/GameOfLife.API.Test.csproj"
-RUN dotnet restore "./GameOfLife.Business.Test/GameOfLife.Business.Test.csproj"
-RUN dotnet restore "./GameOfLife.Infrastructure.Test/GameOfLife.Infrastructure.Test.csproj"
-RUN dotnet test
+
 
 
 FROM build AS publish

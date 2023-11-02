@@ -54,7 +54,7 @@ namespace GameOfLife.Business
         [Test]
         public void CalculateNextGeneration_ValidInput_ReturnsOk_v1()
         {
-            string gameId = "47961b68-cfa6-41bc-ac58-d6d93bda5dd9";
+            string gameId = "40dd2909-89f4-4b48-98e5-55a4c3941461";
             // Act
             IActionResult result = gameController.CalculateNextGeneration(gameId);
 
@@ -69,9 +69,9 @@ namespace GameOfLife.Business
         {
             int[][] initialBoard = new int[][]{
                 new int[] { 3, 3 },
-                new int[] { 3, 3 },
-                new int[] { 3, 3 },
-                new int[] { 3, 3 }};
+                new int[] { 0, 1 },
+                new int[] { 1, 0 },
+                new int[] { 1, 1 }};
 
             // Act
             IActionResult result = gameControllerv2.CreateGame( initialBoard);
@@ -85,7 +85,7 @@ namespace GameOfLife.Business
         [Test]
         public void CalculateNextGeneration_ValidInput_ReturnsOk_v2()
         {
-            string gameId = "47961b68-cfa6-41bc-ac58-d6d93bda5dd9";
+            string gameId = "40dd2909-89f4-4b48-98e5-55a4c3941461";
             // Act
             IActionResult result = gameControllerv2.CalculateNextGeneration(gameId);
 

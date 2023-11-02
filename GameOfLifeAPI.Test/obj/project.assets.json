@@ -514,7 +514,8 @@
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.4": {
         "type": "package",
         "build": {
-          "build/_._": {}
+          "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props": {},
+          "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets": {}
         }
       },
       "Moq/4.20.69": {
@@ -2947,6 +2948,7 @@
       "FluentAssertions >= 6.12.0",
       "GameOfLife.API >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.7.1",
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.19.4",
       "Moq >= 4.20.69",
       "NSubstitute >= 5.1.0",
       "NUnit >= 3.13.3",
@@ -3012,6 +3014,10 @@
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[17.7.1, )"
+          },
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+            "target": "Package",
+            "version": "[1.19.4, )"
           },
           "Moq": {
             "target": "Package",
