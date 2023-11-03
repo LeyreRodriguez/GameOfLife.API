@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "1fPGvO0tqY7jkE3vgUCtwa4njNBOVSGyBdZldb9i04lZMi3uMoxRkMcdOjUtjiGNmjzYkgwluzT0RtxIO4n9dQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lerodriguez\\source\\repos\\GameOfLife.API\\BoardBuilder\\BoardBuilder.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lerodriguez\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
+    "C:\\Users\\lerodriguez\\.nuget\\packages\\fluentassertions\\6.12.0\\fluentassertions.6.12.0.nupkg.sha512",
+    "C:\\Users\\lerodriguez\\.nuget\\packages\\moq\\4.20.69\\moq.4.20.69.nupkg.sha512",
+    "C:\\Users\\lerodriguez\\.nuget\\packages\\nsubstitute\\5.1.0\\nsubstitute.5.1.0.nupkg.sha512",
+    "C:\\Users\\lerodriguez\\.nuget\\packages\\system.configuration.configurationmanager\\4.4.0\\system.configuration.configurationmanager.4.4.0.nupkg.sha512",
+    "C:\\Users\\lerodriguez\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512",
+    "C:\\Users\\lerodriguez\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.4.0\\system.security.cryptography.protecteddata.4.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}

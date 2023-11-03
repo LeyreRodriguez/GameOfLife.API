@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GameOfLife.API</name>
+    </assembly>
+    <members>
+        <member name="M:GameOfLife.Business.GameOfLifeController.CreateGame(System.Boolean[][])">
+             <summary>
+             Return actual generation of GameOfLife and save in a JSON File.
+             </summary>
+             <response code="201">Returns the newly created game id</response>
+             <response code="400">The input values are not valid</response>
+             <remarks>
+             
+             Sample request:
+            
+             POST /api/v1/gameoflife
+             
+             Content-Type: application/json
+             
+             Request Body:
+             
+             [
+             
+                 [false, true, false],
+                 
+                 [true, true, false],
+                 
+                 [false, false, false]
+                 
+             ]
+                 
+            
+             </remarks>
+        </member>
+        <member name="M:GameOfLife.Business.GameOfLifeController.CalculateNextGeneration(System.String)">
+            <summary>
+            Return next generation of GameOfLife from a JSON File and save it.
+            </summary>
+            <response code="200">The game was found and successfully updated</response>
+            <response code="404">The game was not found</response>
+            
+        </member>
+        <member name="M:GameOfLife.Business.GameOfLifeV2Controller.CreateGame(System.Int32[][])">
+             <summary>
+             Return actual generation of GameOfLife and save in a JSON File.
+             </summary>
+             <response code="201">Returns the newly created game id</response>
+             <response code="400">The input values are not valid</response>
+             
+             <remarks>
+             
+             Sample request:
+            
+             POST /api/v2/gameoflife
+             
+             Content-Type: application/json
+             
+             Request Body:
+             
+             [
+             
+                 [3,3],          // Board dimensions
+                 
+                 [0,1],          // Living cell
+                 
+                 [1,0],          // Living cell
+                 
+                 [1,1]
+                 
+             ]
+                 
+            
+             </remarks>
+        </member>
+        <member name="M:GameOfLife.Business.GameOfLifeV2Controller.CalculateNextGeneration(System.String)">
+            <summary>
+            Return next generation of GameOfLife from a JSON File and save it.
+            </summary>
+            <response code="200">The game was found and successfully updated</response>
+            <response code="404">The game was not found</response>
+            
+        </member>
+    </members>
+</doc>

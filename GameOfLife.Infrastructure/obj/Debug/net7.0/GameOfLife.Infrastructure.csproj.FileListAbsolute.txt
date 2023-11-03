@@ -1,0 +1,15 @@
+C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLife.Infrastructure\bin\Debug\net7.0\GameOfLife.Infrastructure.deps.json
+C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLife.Infrastructure\bin\Debug\net7.0\GameOfLife.Infrastructure.dll
+C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLife.Infrastructure\bin\Debug\net7.0\GameOfLife.Infrastructure.pdb
+C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLife.Infrastructure\bin\Debug\net7.0\GameOfLife.Business.dll
+C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLife.Infrastructure\bin\Debug\net7.0\GameOfLife.Business.pdb
+C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLife.Infrastructure\obj\Debug\net7.0\GameOfLife.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLife.Infrastructure\obj\Debug\net7.0\GameOfLife.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLife.Infrastructure\obj\Debug\net7.0\GameOfLife.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLife.Infrastructure\obj\Debug\net7.0\GameOfLife.Infrastructure.AssemblyInfo.cs
+C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLife.Infrastructure\obj\Debug\net7.0\GameOfLife.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLife.Infrastructure\obj\Debug\net7.0\GameOfLife.Infrastructure.csproj.CopyComplete
+C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLife.Infrastructure\obj\Debug\net7.0\GameOfLife.Infrastructure.dll
+C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLife.Infrastructure\obj\Debug\net7.0\refint\GameOfLife.Infrastructure.dll
+C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLife.Infrastructure\obj\Debug\net7.0\GameOfLife.Infrastructure.pdb
+C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLife.Infrastructure\obj\Debug\net7.0\ref\GameOfLife.Infrastructure.dll
