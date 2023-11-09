@@ -9,6 +9,7 @@
       "GameOfLife.API/1.0.0": {
         "dependencies": {
           "Asp.Versioning.Mvc": "7.1.0",
+          "AspNetCore.HealthChecks.Prometheus.Metrics": "7.0.0",
           "BoardBuilder": "1.0.0",
           "FluentAssertions": "6.12.0",
           "GameOfLife.Business": "1.0.0",
@@ -58,6 +59,17 @@
           }
         }
       },
+      "AspNetCore.HealthChecks.Prometheus.Metrics/7.0.0": {
+        "dependencies": {
+          "prometheus-net": "8.0.1"
+        },
+        "runtime": {
+          "lib/net6.0/HealthChecks.Prometheus.Metrics.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.0.0"
+          }
+        }
+      },
       "Castle.Core/5.1.1": {
         "dependencies": {
           "System.Diagnostics.EventLog": "6.0.0"
@@ -92,7 +104,22 @@
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {},
-      "Microsoft.Extensions.DependencyInjection/2.1.0": {
+      "Microsoft.Extensions.Configuration/3.1.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "3.1.0"
+        }
+      },
+      "Microsoft.Extensions.Configuration.Abstractions/3.1.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "7.0.0"
+        }
+      },
+      "Microsoft.Extensions.Configuration.Binder/3.1.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "3.1.0"
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection/3.1.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.9"
         }
@@ -107,6 +134,29 @@
             "assemblyVersion": "3.1.6.0",
             "fileVersion": "3.100.620.31604"
           }
+        }
+      },
+      "Microsoft.Extensions.Http/3.1.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.9",
+          "Microsoft.Extensions.Logging": "3.1.0",
+          "Microsoft.Extensions.Options": "3.1.0"
+        }
+      },
+      "Microsoft.Extensions.Logging/3.1.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Binder": "3.1.0",
+          "Microsoft.Extensions.DependencyInjection": "3.1.0",
+          "Microsoft.Extensions.Logging.Abstractions": "3.1.0",
+          "Microsoft.Extensions.Options": "3.1.0"
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/3.1.0": {},
+      "Microsoft.Extensions.ObjectPool/7.0.0": {},
+      "Microsoft.Extensions.Options/3.1.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.9",
+          "Microsoft.Extensions.Primitives": "7.0.0"
         }
       },
       "Microsoft.Extensions.PlatformAbstractions/1.1.0": {
@@ -218,6 +268,18 @@
           }
         }
       },
+      "prometheus-net/8.0.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Http": "3.1.0",
+          "Microsoft.Extensions.ObjectPool": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/Prometheus.NetStandard.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1.0"
+          }
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
@@ -288,7 +350,7 @@
       },
       "Swashbuckle.AspNetCore.Filters/7.0.12": {
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "2.1.0",
+          "Microsoft.Extensions.DependencyInjection": "3.1.0",
           "Microsoft.OpenApi": "1.4.3",
           "Scrutor": "3.3.0",
           "Swashbuckle.AspNetCore.Filters.Abstractions": "7.0.12",
@@ -931,6 +993,7 @@
       },
       "BoardBuilder/1.0.0": {
         "dependencies": {
+          "AspNetCore.HealthChecks.Prometheus.Metrics": "7.0.0",
           "FluentAssertions": "6.12.0",
           "Moq": "4.20.69",
           "NSubstitute": "5.1.0"
@@ -941,6 +1004,7 @@
       },
       "GameOfLife.Business/1.0.0": {
         "dependencies": {
+          "AspNetCore.HealthChecks.Prometheus.Metrics": "7.0.0",
           "FluentAssertions": "6.12.0",
           "Moq": "4.20.69",
           "NSubstitute": "5.1.0"
@@ -951,6 +1015,7 @@
       },
       "GameOfLife.Infrastructure/1.0.0": {
         "dependencies": {
+          "AspNetCore.HealthChecks.Prometheus.Metrics": "7.0.0",
           "FluentAssertions": "6.12.0",
           "GameOfLife.Business": "1.0.0",
           "Moq": "4.20.69",
@@ -990,6 +1055,13 @@
       "path": "asp.versioning.mvc/7.1.0",
       "hashPath": "asp.versioning.mvc.7.1.0.nupkg.sha512"
     },
+    "AspNetCore.HealthChecks.Prometheus.Metrics/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8uH35t9eHowun9pr6Gi6i9kmscf9BoVCShXW7FL3C6wJQfISPOggkS2uN2+g4uJYKYSTGbmcGuuIRcWUjnwsMw==",
+      "path": "aspnetcore.healthchecks.prometheus.metrics/7.0.0",
+      "hashPath": "aspnetcore.healthchecks.prometheus.metrics.7.0.0.nupkg.sha512"
+    },
     "Castle.Core/5.1.1": {
       "type": "package",
       "serviceable": true,
@@ -1018,12 +1090,33 @@
       "path": "microsoft.extensions.apidescription.server/6.0.5",
       "hashPath": "microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512"
     },
-    "Microsoft.Extensions.DependencyInjection/2.1.0": {
+    "Microsoft.Extensions.Configuration/3.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-gqQviLfuA31PheEGi+XJoZc1bc9H9RsPa9Gq9XuDct7XGWSR9eVXjK5Sg7CSUPhTFHSuxUFY12wcTYLZ4zM1hg==",
-      "path": "microsoft.extensions.dependencyinjection/2.1.0",
-      "hashPath": "microsoft.extensions.dependencyinjection.2.1.0.nupkg.sha512"
+      "sha512": "sha512-Lu41BWNmwhKr6LgyQvcYBOge0pPvmiaK8R5UHXX4//wBhonJyWcT2OK1mqYfEM5G7pTf31fPrpIHOT6sN7EGOA==",
+      "path": "microsoft.extensions.configuration/3.1.0",
+      "hashPath": "microsoft.extensions.configuration.3.1.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Configuration.Abstractions/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ESz6bVoDQX7sgWdKHF6G9Pq672T8k+19AFb/txDXwdz7MoqaNQj2/in3agm/3qae9V+WvQZH86LLTNVo0it8vQ==",
+      "path": "microsoft.extensions.configuration.abstractions/3.1.0",
+      "hashPath": "microsoft.extensions.configuration.abstractions.3.1.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Configuration.Binder/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-o9eELDBfNkR7sUtYysFZ1Q7BQ1mYt27DMkups/3vu7xgPyOpMD+iAfrBZFzUXT2iw0fmFb8s1gfNBZS+IgjKdQ==",
+      "path": "microsoft.extensions.configuration.binder/3.1.0",
+      "hashPath": "microsoft.extensions.configuration.binder.3.1.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KVkv3aF2MQpmGFRh4xRx2CNbc2sjDFk+lH4ySrjWSOS+XoY1Xc+sJphw3N0iYOpoeCCq8976ceVYDH8sdx2qIQ==",
+      "path": "microsoft.extensions.dependencyinjection/3.1.0",
+      "hashPath": "microsoft.extensions.dependencyinjection.3.1.0.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.9": {
       "type": "package",
@@ -1038,6 +1131,41 @@
       "sha512": "sha512-/UlDKULIVkLQYn1BaHcy/rc91ApDxJb7T75HcCbGdqwvxhnRQRKM2di1E70iCPMF9zsr6f4EgQTotBGxFIfXmw==",
       "path": "microsoft.extensions.dependencymodel/3.1.6",
       "hashPath": "microsoft.extensions.dependencymodel.3.1.6.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Http/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DLigdcV0nYaT6/ly0rnfP80BnXq8NNd/h8/SkfY39uio7Bd9LauVntp6RcRh1Kj23N+uf80GgL7Win6P3BCtoQ==",
+      "path": "microsoft.extensions.http/3.1.0",
+      "hashPath": "microsoft.extensions.http.3.1.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-P+8sKQ8L4ooL79sxxqwFPxGGC3aBrUDLB/dZqhs4J0XjTyrkeeyJQ4D4nzJB6OnAhy78HIIgQ/RbD6upOXLynw==",
+      "path": "microsoft.extensions.logging/3.1.0",
+      "hashPath": "microsoft.extensions.logging.3.1.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging.Abstractions/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jjo4YXRx6MIpv6DiRxJjSpl+sPP0+5VW0clMEdLyIAz44PPwrDTFrd5PZckIxIXl1kKZ2KK6IL2nkt0+ug2MQg==",
+      "path": "microsoft.extensions.logging.abstractions/3.1.0",
+      "hashPath": "microsoft.extensions.logging.abstractions.3.1.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.ObjectPool/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-udvKco0sAVgYGTBnHUb0tY9JQzJ/nPDiv/8PIyz69wl1AibeCDZOLVVI+6156dPfHmJH7ws5oUJRiW4ZmAvuuA==",
+      "path": "microsoft.extensions.objectpool/7.0.0",
+      "hashPath": "microsoft.extensions.objectpool.7.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Options/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9b6JHY7TAXrSfZ6EEGf+j8XnqKIiMPErfmaNXhJYSCb+BUW2H4RtzkNJvwLJzwgzqBP0wtTjyA6Uw4BPPdmkMw==",
+      "path": "microsoft.extensions.options/3.1.0",
+      "hashPath": "microsoft.extensions.options.3.1.0.nupkg.sha512"
     },
     "Microsoft.Extensions.PlatformAbstractions/1.1.0": {
       "type": "package",
@@ -1115,6 +1243,13 @@
       "sha512": "sha512-ZCqOP3Kpp2ea7QcLyjMU4wzE+0wmrMN35PQMsdPOHYc2IrvjmusG9hICOiqiOTPKN0gJon6wyCn6ZuGHdNs9hQ==",
       "path": "nsubstitute/5.1.0",
       "hashPath": "nsubstitute.5.1.0.nupkg.sha512"
+    },
+    "prometheus-net/8.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-A9sOtQB2gEhujBxPKw+KcGScBiPvBmy4lYVM5OlETMj4xjVD5r/ixIg52HHg2P0lcImJTpfeWnD0/9tpQsRQTA==",
+      "path": "prometheus-net/8.0.1",
+      "hashPath": "prometheus-net.8.0.1.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",

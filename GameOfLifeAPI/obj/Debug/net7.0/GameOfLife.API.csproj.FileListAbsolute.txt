@@ -55,3 +55,10 @@ C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLifeAPI\bin\Debug\net7.0\
 C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLifeAPI\bin\Debug\net7.0\Asp.Versioning.Mvc.dll
 C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLifeAPI\bin\Debug\net7.0\BoardBuilder.dll
 C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLifeAPI\bin\Debug\net7.0\BoardBuilder.pdb
+C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLifeAPI\bin\Debug\net7.0\HealthChecks.Prometheus.Metrics.dll
+C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLifeAPI\bin\Debug\net7.0\Prometheus.NetStandard.dll
+C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLifeAPI\bin\Debug\net7.0\JSON\17f585f5-c567-49a2-a8b5-14ba584d3372.json
+C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLifeAPI\bin\Debug\net7.0\JSON\19f26867-b502-4510-a2d8-c42b54c6ce0a.json
+C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLifeAPI\bin\Debug\net7.0\JSON\2ec98a50-7e2e-4a5f-a5cb-f88b67c389a4.json
+C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLifeAPI\bin\Debug\net7.0\JSON\2f76f8b1-1220-424c-ac7b-edb431a52092.json
+C:\Users\lerodriguez\source\repos\GameOfLife.API\GameOfLifeAPI\bin\Debug\net7.0\JSON\40dd2909-89f4-4b48-98e5-55a4c3941461.json

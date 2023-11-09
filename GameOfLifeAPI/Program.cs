@@ -8,6 +8,7 @@ using GameOfLife.Infrastructure;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.PlatformAbstractions;
+using System.Net;
 
 namespace GameOfLife.Business.API
 {
@@ -106,6 +107,13 @@ namespace GameOfLife.Business.API
 
             app.UseAuthorization();
 
+           
+
+            // You could customize the endpoint
+            app.UseHealthChecksPrometheusExporter("/metrics");
+
+            // Customize HTTP status code returned(prometheus will not read health metrics when a default HTTP 503 is returned)
+            app.UseHealthChecksPrometheusExporter("/metrics", options => options.ResultStatusCodes[HealthStatus.Unhealthy] = (int)HttpStatusCode.OK);
 
             app.MapControllers();
 
